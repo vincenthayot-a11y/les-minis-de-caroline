@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vincenthayot-a11y.github.io/les-minis-de-caroline/sitemap.xml

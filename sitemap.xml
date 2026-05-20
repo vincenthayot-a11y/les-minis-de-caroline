@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://vincenthayot-a11y.github.io/les-minis-de-caroline/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://vincenthayot-a11y.github.io/les-minis-de-caroline/og-image.jpg</image:loc>
+      <image:title>Les Minis de Caroline · Activités poney pour enfants en Martinique</image:title>
+      <image:caption>Enfants à dos de poneys en bord de mer en Martinique</image:caption>
+    </image:image>
+  </url>
+</urlset>
