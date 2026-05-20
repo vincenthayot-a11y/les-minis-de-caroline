@@ -635,21 +635,34 @@
   /* Lightbox */
   .lightbox {
     position: fixed; inset: 0;
-    background: rgba(20, 16, 8, 0.92);
+    background: rgba(20, 16, 8, 0.96);
     display: none;
     align-items: center; justify-content: center;
-    z-index: 100;
+    z-index: 200;
     padding: 40px;
     cursor: pointer;
   }
   .lightbox.open { display: flex; }
-  .lightbox img { max-width: 100%; max-height: 100%; border-radius: 12px; box-shadow: var(--shadow-lg); }
+  .lightbox img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto; height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    display: block;
+  }
   .lightbox-close {
     position: absolute; top: 24px; right: 24px;
     width: 44px; height: 44px; border-radius: 50%;
     background: var(--cream); color: var(--navy);
     display: grid; place-items: center;
     border: none; font-size: 24px; cursor: pointer;
+    z-index: 201;
+  }
+  @media (max-width: 600px) {
+    .lightbox { padding: 20px; }
+    .lightbox-close { top: 14px; right: 14px; width: 40px; height: 40px; }
   }
 
   /* ---------- INSTAGRAM ---------- */
