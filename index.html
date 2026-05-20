@@ -101,14 +101,14 @@
     --coral: #D9603F;
     --coral-deep: #B84A2C;
     --coral-soft: #F2B49A;
-    --navy: #1F324E;
-    --navy-deep: #142540;
+    --navy: #1E40AF;
+    --navy-deep: #1E3A8A;
     --green: #5C7A5C;
     --green-deep: #3F5840;
     --ink: #2A2418;
     --ink-soft: #5B5347;
     --hibiscus: #E85A4F;
-    --line: rgba(31, 50, 78, 0.12);
+    --line: rgba(30, 64, 175, 0.12);
     --shadow-sm: 0 2px 8px rgba(42, 36, 24, 0.06);
     --shadow-md: 0 10px 30px rgba(42, 36, 24, 0.08);
     --shadow-lg: 0 20px 50px rgba(42, 36, 24, 0.12);
@@ -298,23 +298,23 @@
   .hero-visual::after {
     content: '';
     position: absolute; inset: 0;
-    background: linear-gradient(180deg, transparent 60%, rgba(31, 50, 78, 0.25) 100%);
+    background: linear-gradient(180deg, transparent 60%, rgba(30, 64, 175, 0.25) 100%);
   }
   .hero-sticker {
     position: absolute;
-    top: -28px; right: -28px;
+    top: -24px; right: -20px;
     background: var(--cream);
     border-radius: 50%;
-    width: 130px; height: 130px;
+    width: 150px; height: 150px;
     display: grid; place-items: center;
     text-align: center;
     box-shadow: var(--shadow-md);
-    transform: rotate(-12deg);
+    transform: rotate(-8deg);
     font-family: 'Caveat', cursive;
     color: var(--coral-deep);
-    font-size: 21px; font-weight: 600;
-    line-height: 1.1;
-    padding: 12px;
+    font-size: 22px; font-weight: 600;
+    line-height: 1.15;
+    padding: 14px;
     z-index: 3;
   }
   .hero .blob-1 { width: 400px; height: 400px; background: var(--coral-soft); top: -100px; left: -150px; opacity: 0.4; }
@@ -597,12 +597,12 @@
   .galerie-item::after {
     content: '';
     position: absolute; inset: 0;
-    background: rgba(31, 50, 78, 0);
+    background: rgba(30, 64, 175, 0);
     transition: background 0.3s ease;
     border-radius: 14px;
     pointer-events: none;
   }
-  .galerie-item:hover::after { background: rgba(31, 50, 78, 0.35); }
+  .galerie-item:hover::after { background: rgba(30, 64, 175, 0.35); }
   .galerie-zoom {
     position: absolute; top: 50%; left: 50%;
     transform: translate(-50%, -50%) scale(0.7);
@@ -623,7 +623,7 @@
   .benefice.featured h3 { color: var(--cream); }
   .benefice.featured p { color: rgba(251, 246, 238, 0.75); }
   .benefice.featured .benefice-icon { background: rgba(217, 96, 63, 0.25); color: var(--coral-soft); }
-  .benefice.featured:hover { border-color: var(--coral); box-shadow: 0 16px 40px rgba(31, 50, 78, 0.3); }
+  .benefice.featured:hover { border-color: var(--coral); box-shadow: 0 16px 40px rgba(30, 64, 175, 0.3); }
   .galerie-item.tall { grid-row: span 2; }
   .galerie-item.wide { grid-column: span 2; }
 
@@ -932,7 +932,7 @@
     margin-left: -12px; white-space: nowrap;
     opacity: 0; transform: translateX(-8px);
     transition: all 0.3s ease; pointer-events: none;
-    box-shadow: 0 4px 14px rgba(31, 50, 78, 0.2);
+    box-shadow: 0 4px 14px rgba(30, 64, 175, 0.2);
   }
   .wa-float:hover .wa-float-btn { transform: scale(1.08); box-shadow: 0 12px 32px rgba(37, 211, 102, 0.5); }
   .wa-float:hover .wa-float-label { opacity: 1; transform: translateX(0); }
@@ -975,7 +975,119 @@
     .back-top { bottom: 18px; right: 18px; width: 46px; height: 46px; }
   }
 
-  /* ---------- ANIMATIONS ---------- */
+  /* ---------- MOBILE OPTIMISATIONS COMPLETES ---------- */
+  @media (max-width: 768px) {
+    /* Padding général réduit */
+    .container, .container-narrow { padding: 0 20px; }
+    section { padding: 60px 0; }
+
+    /* Typo : moins agressive sur mobile */
+    h1 { font-size: clamp(2.2rem, 9vw, 3rem) !important; line-height: 1.1; }
+    h2 { font-size: clamp(1.7rem, 6.5vw, 2.3rem) !important; line-height: 1.15; }
+    h3 { font-size: 1.15rem; }
+    body { font-size: 16px; }
+
+    /* HERO - empilé, plus court, mieux espacé */
+    .hero { padding: 30px 0 40px; }
+    .hero-grid { gap: 32px; }
+    .hero-eyebrow { font-size: 22px; margin-bottom: 12px; }
+    .hero h1 { font-size: clamp(2.4rem, 10vw, 3.4rem) !important; margin-bottom: 18px; }
+    .hero-tagline { font-size: 16px; margin-bottom: 26px; }
+    .hero-buttons { flex-direction: column; gap: 10px; }
+    .hero-buttons .btn { width: 100%; justify-content: center; }
+    .hero-visual { max-width: 340px; margin: 0 auto; transform: rotate(0deg); }
+    .hero-sticker {
+      width: 110px; height: 110px;
+      font-size: 14px;
+      top: -14px; right: -6px;
+      padding: 10px;
+      line-height: 1.15;
+    }
+
+    /* Section intro */
+    .section-intro { margin-bottom: 36px; }
+    .section-intro p { font-size: 16px; }
+    .section-tag { font-size: 22px; margin-bottom: 10px; }
+
+    /* Boutons : full-width pour faciliter le tap */
+    .btn { padding: 14px 24px; font-size: 15px; }
+    .btn-large { padding: 16px 28px; font-size: 16px; }
+
+    /* NAV burger : meilleur affichage */
+    .nav-inner { padding: 14px 20px; }
+    .brand-mark { width: 38px; height: 38px; font-size: 19px; }
+    .brand-text { font-size: 17px; }
+    .brand-text em { font-size: 19px; }
+
+    /* APPROCHE */
+    .approche-grid { gap: 32px; }
+    .approche-image-caption { font-size: 17px; padding: 10px 14px; bottom: 12px; left: 12px; right: 12px; }
+    .approche-values li { font-size: 15px; }
+
+    /* BÉNÉFICES : 1 colonne sur très petits écrans */
+    .benefices-grid { grid-template-columns: 1fr; gap: 14px; }
+    .benefice { padding: 22px 20px; }
+    .benefices-note { padding: 24px; margin-top: 36px; }
+    .benefices-note h3 { font-size: 1.15rem; }
+    .benefices-note p { font-size: 14.5px; }
+
+    /* ACTIVITÉS */
+    .activites-grid { grid-template-columns: 1fr; gap: 18px; }
+
+    /* POUR QUI */
+    .pour-qui-grid { gap: 32px; }
+    .pour-qui-list li { padding: 16px 0; grid-template-columns: 42px 1fr; gap: 14px; }
+    .pour-qui-num { font-size: 22px; }
+    .pour-qui-list strong { font-size: 17px; }
+    .pour-qui-list span { font-size: 14.5px; }
+
+    /* SÉANCE TYPE : déjà en 1 col sous 700px, on raffine */
+    .seance-step { padding: 16px 18px; }
+    .seance-step h3 { font-size: 1rem; }
+    .seance-step p { font-size: 13.5px; }
+
+    /* GALERIE : moins de tuiles sur petit écran */
+    .galerie-grid { grid-template-columns: 1fr 1fr; gap: 10px; grid-auto-rows: 140px; }
+    .galerie-item.wide, .galerie-item.tall { grid-column: span 1; grid-row: span 1; }
+    .galerie-item.tall:nth-child(1) { grid-row: span 2; }
+
+    /* INSTAGRAM */
+    .ig-icon { width: 68px; height: 68px; border-radius: 18px; }
+    .ig-icon svg { width: 32px; height: 32px; }
+    .ig-handle { padding: 14px 22px; font-size: 15px; }
+    .ig-decor-tile { width: 56px; height: 56px; }
+
+    /* INFOS PRATIQUES */
+    .infos-grid { grid-template-columns: 1fr; gap: 12px; }
+    .info-card { padding: 22px 20px; }
+
+    /* CONTACT WHATSAPP */
+    .contact-block { padding: 40px 24px; }
+    .contact-wa-icon { width: 60px; height: 60px; margin-bottom: 16px; }
+    .contact-wa-icon svg { width: 30px; height: 30px; }
+    .contact-block > .contact-wa-inner > p { font-size: 15.5px; margin-bottom: 26px; }
+    .btn-wa { padding: 16px 24px; font-size: 15px; margin-bottom: 26px; }
+    .wa-pills { gap: 7px; }
+    .wa-pill { font-size: 13px; padding: 8px 14px; }
+
+    /* FINAL CTA */
+    .final { padding: 80px 0 70px; }
+    .final h2 { font-size: clamp(2rem, 8vw, 2.8rem) !important; }
+    .final p { font-size: 16px; }
+
+    /* WhatsApp flottant + Back-top : ne pas se chevaucher */
+    .wa-float { bottom: 16px; left: 16px; }
+    .back-top { bottom: 16px; right: 16px; width: 44px; height: 44px; }
+  }
+
+  /* Très petits écrans (< 380px) */
+  @media (max-width: 380px) {
+    .container, .container-narrow { padding: 0 16px; }
+    .hero h1 { font-size: 2rem !important; }
+    .hero-sticker { width: 94px; height: 94px; font-size: 12.5px; padding: 8px; line-height: 1.1; }
+    .galerie-grid { grid-auto-rows: 120px; }
+  }
+
   .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
   .reveal.in { opacity: 1; transform: translateY(0); }
 
@@ -1042,7 +1154,7 @@
         </div>
       </div>
       <div class="hero-visual">
-        <div class="hero-sticker">Les minis,<br>c'est la belle vie ✿</div>
+        <div class="hero-sticker">Les minis,<br>c'est la<br>belle vie ✿</div>
         <img src="./images/hero_aquapony.jpg" alt="Activité aquapony - Enfants à dos de poneys dans la mer turquoise de Martinique, association Les Minis de Caroline au Robert">
       </div>
     </div>
